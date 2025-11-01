@@ -146,7 +146,7 @@ Output instruction (omitted, same as template)
 5. For each prompt prefix P1/P2, conduct 10 runs of 200-period experiment.
 
 
-![Figure 1: Illustration of Experiment Design](/figure%201.png)
+![Figure 1: Illustration of Experiment Design](/figure_1.png)
 <center>Figure 1: Illustration of Experiment Design</center>
 
 ## Results Analysis
@@ -171,9 +171,7 @@ Statistical analysis of LLM agents' pricing data.
 - First, present a `descriptive statistic`. Average price and profit of each firm are calculated over the last 30 periods of each run. Each firm's average price and profit in 10 runs are compared with Nash-equilibrium and Monopoly level.
 - Second, conduct an `econometric analysis`. A linear regression model to measure an agent's responsiveness to its competitor's pricing and its stickiness to previous price:
 
-    $$
-    p^t_{i,r} = \alpha_{i,r} + \gamma p^{t-1}_{i,r} + \delta p^{t-1}_{-i,r} + \epsilon^t_{i,r}
-    $$
+    $$p^t_{i,r} = \alpha_{i,r} + \gamma p^{t-1}_{i,r} + \delta p^{t-1}_{-i,r} + \epsilon^t_{i,r}$$
 
     where $p^t_{i,r}$ is the price set by agent $i$ at period $t$ of run $r$ of the experiment, $p^{t-1}_{-i,r}$ is the price set by $i$'s competitor at period $t$ of run $r$, $\alpha_{i,r}$ is a firm-run fixed effect.
 
