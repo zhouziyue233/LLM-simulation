@@ -50,7 +50,7 @@ where:
 
 The profit of firm $i$ is:
 
-$$\pi_i = (p_i - c_i) \cdot d_i$$
+$\pi_i = (p_i - c_i) \cdot d_i$
 
 where $c_i$ represents agent $i$'s marginal cost of producing one more unit of product.
 
@@ -171,7 +171,7 @@ Statistical analysis of LLM agents' pricing data.
 - First, present a `descriptive statistic`. Average price and profit of each firm are calculated over the last 30 periods of each run. Each firm's average price and profit in 10 runs are compared with Nash-equilibrium and Monopoly level.
 - Second, conduct an `econometric analysis`. A linear regression model to measure an agent's responsiveness to its competitor's pricing and its stickiness to previous price:
 
-    $$p^t_{i,r} = \alpha_{i,r} + \gamma p^{t-1}_{i,r} + \delta p^{t-1}_{-i,r} + \epsilon^t_{i,r}$$
+    $p^t_{i,r} = \alpha_{i,r} + \gamma p^{t-1}_{i,r} + \delta p^{t-1}_{-i,r} + \epsilon^t_{i,r}$
 
     where $p^t_{i,r}$ is the price set by agent $i$ at period $t$ of run $r$ of the experiment, $p^{t-1}_{-i,r}$ is the price set by $i$'s competitor at period $t$ of run $r$, $\alpha_{i,r}$ is a firm-run fixed effect.
 
