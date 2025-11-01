@@ -147,7 +147,7 @@ Output instruction (omitted, same as template)
 
 
 ![Figure 1: Illustration of Experiment Design](/figure_1.png)
-<center>Figure 1: Illustration of Experiment Design</center>
+<p align="center">Figure 1: Illustration of Experiment Design</p>
 
 ## 📊 Results Analysis
 
