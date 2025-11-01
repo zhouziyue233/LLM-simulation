@@ -50,7 +50,7 @@ where:
 
 The profit of firm $i$ is:
 
-$\pi_i = (p_i - c_i) \cdot d_i$
+$$\pi_i = (p_i - c_i) \cdot d_i$$
 
 where $c_i$ represents agent $i$'s marginal cost of producing one more unit of product.
 
