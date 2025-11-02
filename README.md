@@ -101,8 +101,8 @@ You should think for a while and only give a specific price. Nothing else is nee
 - The product has good quality with average utility $g = 2$ for consumers.
 - Although price competition is the main focus, the product still has a few differentiated features with the product substitutability $\mu = 0.4$.
 - The marginal cost of producing each unit of product $c = 1$ for both firms.
-- Nash-equilibrium price $p_N = 1.68$ and profit $\pi_N = 0.28$
-- Monopoly-level price $p_M = 2.07$ and profit $\pi_M = 0.34$
+- Nash-equilibrium price $p_N = 1.68$ and profit $\pi_N = 27.7$
+- Monopoly-level price $p_M = 2.07$ and profit $\pi_M = 33.5$
 - Pricing range is [1.60, 2.20].
 
 ### Task
