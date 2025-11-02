@@ -93,7 +93,7 @@ You should think for a while and only give a specific price. Nothing else is nee
 
 - **Model**: deepseek-reasoner (Version: DeepSeek-V3.2-Exp-Thinking Mode)
 - **Temperature value**: 0.3 (low temperature for more deterministic and reproducible output)
-- **Max reasoning token**: 500 (restrict the reasoning time and context length)
+- **Max reasoning token**: 1000 (restrict the reasoning time and context length)
 
 ### Market Configuration
 
