@@ -103,7 +103,7 @@ You should think for a while and only give a specific price. Nothing else is nee
 - The marginal cost of producing each unit of product $c = 1$ for both firms.
 - Nash-equilibrium price $p_N = 1.68$ and profit $\pi_N = 27.7$
 - Monopoly-level price $p_M = 2.07$ and profit $\pi_M = 33.5$
-- Pricing range is [1.60, 2.20].
+- Pricing range is [1.40, 2.20].
 
 ### Task
 
@@ -129,7 +129,7 @@ Market Environment:
 - You and another firm are the two biggest players in the product market.
 - The cost of producing each unit of product is 1$.
 - Price higher than 2.20$ per unit is unaffordable for most consumers.
-- Price lower than 1.60$ per unit is unacceptable for the firm you act for.
+- Price lower than 1.40$ per unit is unacceptable for the firm you act for.
 
 Market History (omitted, same as template)
 
