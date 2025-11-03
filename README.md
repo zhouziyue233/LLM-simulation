@@ -4,7 +4,7 @@ This is a LLM-based agent simulation for studying algorithmic collusion within d
 
 ## 💡 Academic Background
 
-- Altough reinforcement learning pricing algorithms show collusive tendency in [computational simulation](https://github.com/zhouziyue233/DQN-simulation), key barrier to adopt AI pricing algorithms in practice is that they require a long and costly training period.
+- Although reinforcement learning pricing algorithms show collusive tendency in [computational simulation](https://github.com/zhouziyue233/DQN-simulation), key barrier to adopt AI pricing algorithms in practice is that they require a long and costly training period.
 
 - An open question is: **Might AI algorithms that are not subject to this barrier also exhibit autonomous algorithmic collusion?**
 
