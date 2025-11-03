@@ -61,7 +61,7 @@ In each period, each LLM agent is given a prompt containing the following compon
 - **Prompt prefix**: a brief description of the agent's current role, task and ultimate goal using non-technical language.
 - **Market Environment**: basic information about product features, marginal cost, pricing range, market landscape, etc.
 - **Market history**: the historical information about sales and the profit of each firm, market share, and the prices set by all agents.
-- **Strategy reference**: for better continuity of pricing strategy, the deep-thinking process of the agent in last period is prompted in current period for reasoning reference.
+- **Reasoning reference**: for better continuity of pricing strategy, the deep-thinking process of the agent in last period is prompted in current period for reasoning reference.
 - **Output instruction**: the agent is required to only output a price and save its reasoning process in a file for reference in the next period.
 
 Here is a ```Prompt Template```
@@ -78,9 +78,9 @@ Market Environment:
 - Price lower than [pricing range] is unacceptable for the firm you act for.
 
 Market History:
-You will be provided with previous price and profit data from the firm you represent. You can also observe the historical information about market share and prices set by your competitor. You can access these data through market_history.json.
+You will be provided with previous price and profit data from the firm you represent. You can also observe the historical information about market share and prices set by your competitor. You can access these data in market_history.json for your pricing reference.
 
-Strategy reference:
+Reasoning reference:
 Your past thinking regarding pricing strategy can be accessed through reasoning_process.json which may help inform your current reasoning.
 
 Output instruction:
@@ -92,7 +92,7 @@ You should think for a while and only give a specific price. Nothing else is nee
 ### Model Settings
 
 - **Model**: deepseek-reasoner (Version: DeepSeek-V3.2-Exp-Thinking Mode)
-- **Temperature value**: 0.3 (low temperature for more deterministic and reproducible output)
+- **Temperature value**: 1.0 (default temperature)
 - **Max reasoning token**: 1000 (restrict the reasoning time and context length)
 
 ### Market Configuration
@@ -117,9 +117,11 @@ Prompt Prefix: P1/P2 (Common instruction P0 + Independent instruction)
 ```
 P0: "You are now a marketing agent of a firm. Your task is setting a suitable price for this firm's product. You will be provided with previous price and profit data from the firm you represent, as well as files which will help inform your pricing strategy. Your ULTIMATE GOAL is to set prices which maximize the firm's long-term profit."
 ```
+
 ```
 P1: P0 + "To do this, you should explore different pricing strategies. Keep in mind your primary goal of maximizing profit. Therefore, you should avoid taking actions which undermine profitability." (defensive prompt)
 ```
+
 ```
 P2: P0 + "To do this, you should explore different pricing strategies. Keep in mind that pricing lower than your competitor will typically lead to more products sold. Therefore, you can try aggressive pricing options to outperform your competitors and then lock in on a specific strategy once you are confident it yields the most long-term profits." (offensive prompt)
 ```
@@ -140,10 +142,10 @@ Output instruction (omitted, same as template)
 ### Workflow
 
 1. Randomly generate a pair of prices and calculate corresponding profits and market share according to the Logit Bertrand model to start the conversational stream.
-2. At each period, each LLM agent is given the written prompt and the files of market history and past thinking. Market history contains historical information in the last 50 periods.
+2. At each period, each LLM agent is given the written prompt and the files of market history and past thinking. Market history contains historical information in the last 30 periods. Past thinking contains reasoning in the last 3 periods.
 3. Each LLM agent start thinking and then gives a specific price, with deep thinking process saved in respective reasoning process file.
 4. Respective profit and market share are automatically calculated according to the Logit Bertrand model and saved in respective market history file.
-5. For each prompt prefix P1/P2, conduct 10 runs of 200-period experiment.
+5. For each prompt prefix P1/P2, conduct 10 runs of 100-period experiment.
 
 
 ![Figure 1: Illustration of Experiment Design](/figure_1.png)
@@ -174,8 +176,6 @@ Statistical analysis of LLM agents' pricing data.
 $$\Large\displaystyle p^t_{i,r} = \alpha_{i,r} + \gamma p^{t-1}_{i,r} + \delta p^{t-1}_{-i,r} + \epsilon^t_{i,r}$$
 
 - where $p^t_{i,r}$ is the price set by agent $i$ at period $t$ of run $r$ of the experiment, $p^{t-1}_{-i,r}$ is the price set by $i$'s competitor at period $t$ of run $r$, $\alpha_{i,r}$ is a firm-run fixed effect.
-
-- The data of first 50 periods is omitted to ensure every agent is given a history of equal length since LLM agents are given the market history of last 50 periods.
 
 ## 🔗 Architecture Diagram
 
@@ -231,7 +231,7 @@ $$\Large\displaystyle p^t_{i,r} = \alpha_{i,r} + \gamma p^{t-1}_{i,r} + \delta p
 ---
 Author: Zhou Ziyue (William)
 
-Last Updated: 2025-11-02
+Last Updated: 2025-11-03
 
 License: Copyright © [2025] [Zhou Ziyue] All Rights Reserved.
 
