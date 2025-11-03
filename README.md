@@ -175,7 +175,7 @@ Statistical analysis of LLM agents' pricing data.
 
 $$\Large\displaystyle p^t_{i,r} = \alpha_{i,r} + \gamma p^{t-1}_{i,r} + \delta p^{t-1}_{-i,r} + \epsilon^t_{i,r}$$
 
-- where $p^t_{i,r}$ is the price set by agent $i$ at period $t$ of run $r$ of the experiment, $p^{t-1}_{-i,r}$ is the price set by $i$'s competitor at period $t$ of run $r$, $\alpha_{i,r}$ is a firm-run fixed effect.
+- where $p^t_{i,r}$ is the price set by agent $i$ at period $t$ of run $r$ of the experiment, $p^{t-1}\_{-i,r}$ is the price set by $i$'s competitor at period $t$ of run $r$, $\alpha_{i,r}$ is a firm-run fixed effect.
 
 ## 🔗 Architecture Diagram
 
